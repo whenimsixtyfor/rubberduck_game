@@ -1,0 +1,27 @@
+.duckHead {
+  position:absolute;
+  width: 50px;
+  height: 50px;
+  background: yellow;
+  border-radius: 50%;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.duckBody {
+  position:absolute;
+  width: 90px;
+  height: 110px;
+  background: yellow;
+  border-radius: 50% 50% 50% 50%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#duck {
+  position: relative;
+  width: 100px;
+  height: 150px;
+  margin: 0 auto;
+  }
