@@ -2,8 +2,9 @@
    <h1  id="title" class="text-2xl font-bold text-center mb-2"> "toca al pato de goma!"</h1>
   <div class="duck-container">
     <div id="duck" (click)="quack()" [class.jumping]="jumping()" role="button" (keydown.enter)="quack()">
-      <img src="assets/duck.png" alt="Rubber Duck" class="w-full h-auto" />
+      <img src="/duck.png" alt="Rubber Duck" class="w-full h-auto" />
     </div>
   </div>
   <p class="text-center font-italic justify">veces que dijo quack : {{ counter() }}</p>
+  <audio #quackSound src="/quack.wav" preload="auto"></audio>
   </main>
