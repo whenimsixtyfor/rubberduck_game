@@ -1,27 +1,37 @@
-.duckHead {
-  position:absolute;
-  width: 50px;
-  height: 50px;
-  background: yellow;
-  border-radius: 50%;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.duckBody {
-  position:absolute;
-  width: 90px;
-  height: 110px;
-  background: yellow;
-  border-radius: 50% 50% 50% 50%;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
 
 #duck {
-  position: relative;
-  width: 100px;
-  height: 150px;
+  width: 270px;
   margin: 0 auto;
+  padding: 10px;
+  border-radius: 24px;
+  cursor: pointer;
   }
+#duck img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform-origin: 50% 93%;
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.5));
+  }
+
+  #duck.jumping img{
+  animation: squish 500ms ease-out;
+}
+
+@keyframes squish {
+  0% {
+    transform:scale(1,1);
+  }
+  30% {
+    transform: scale(1.25, 0.75);
+  }
+  55% {
+    transform: scale(0.85, 1.15);
+  }
+  75% {
+    transform: scale(1.06, 0.94);
+  }
+  100% {
+    transform: scale(1,1);
+  }
+}

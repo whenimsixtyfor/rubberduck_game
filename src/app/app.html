@@ -1,8 +1,9 @@
-<body class="bg-yellow-50">
-  <div id="duck" (click)="quack()" [class.jumping]="jumping()" cl>
+ <main class="flex flex-col items-center justify-center min-h-screen">
    <h1  id="title" class="text-2xl font-bold text-center mb-2"> "toca al pato de goma!"</h1>
-  <div class="duckHead"></div>
-  <div class="duckBody"></div>
- <p class="text-center font-italic justify">veces que dijo quack : {{ counter() }}</p>
-</div>
-</body>
+  <div class="duck-container">
+    <div id="duck" (click)="quack()" [class.jumping]="jumping()" role="button" (keydown.enter)="quack()">
+      <img src="assets/duck.png" alt="Rubber Duck" class="w-full h-auto" />
+    </div>
+  </div>
+  <p class="text-center font-italic justify">veces que dijo quack : {{ counter() }}</p>
+  </main>
