@@ -1,5 +1,12 @@
  <main class="flex flex-col items-center justify-center min-h-screen">
-   <h1  id="title" class="text-2xl font-bold text-center mb-2"> "toca al pato de goma!"</h1>
+  <button type="button" (click)="toggle()" class="mb-4 py-6 py-2 rounded bg-blue-100">
+    {{showCat() ? 'pato' : 'gato'}}
+  </button>
+  @if (showCat()) {
+    <app-cat/>
+  } 
+  @else {   
+    <h1  id="title" class="text-2xl font-bold text-center mb-2"> "toca al pato de goma!"</h1>
   <div class="duck-container">
     <div id="duck" (click)="quack()" [class.jumping]="jumping()" role="button" (keydown.enter)="quack()">
       <img src="/duck.png" alt="Rubber Duck" class="w-full h-auto" />
@@ -7,4 +14,5 @@
   </div>
   <p class="text-center font-italic justify">veces que dijo quack : {{ counter() }}</p>
   <audio #quackSound src="/quack.wav" preload="auto"></audio>
-  </main>
+}
+</main>

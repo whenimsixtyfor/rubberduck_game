@@ -1,9 +1,8 @@
-import { Component, viewChild } from '@angular/core';
-import { signal } from '@angular/core';
-import { OnDestroy } from '@angular/core';
-import { ElementRef } from '@angular/core';
+import { Component, viewChild,signal,OnDestroy,ElementRef } from '@angular/core';
+import { Cat } from './cat/cat';
 @Component({
   selector: 'app-root',
+  imports: [Cat],
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
@@ -11,6 +10,11 @@ import { ElementRef } from '@angular/core';
 export class App implements OnDestroy {
   counter= signal(0);
   jumping= signal(false);
+  showCat= signal(false);
+  toggle() {
+       this.showCat.update(v=> !v); 
+      }
+      
   private timeoutId: ReturnType<typeof setTimeout> | null = null;
  private readonly quackSound = viewChild.required<ElementRef<HTMLAudioElement>>('quackSound');
   quack() {
@@ -25,6 +29,7 @@ export class App implements OnDestroy {
     }, 500);
    
     
+   
   }
   ngOnDestroy(): void {
     if (this.timeoutId) {
