@@ -11,7 +11,7 @@
   width: 100%;
   height: auto;
   transform-origin: 50% 93%;
-  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.3));
   }
 
   #cat.jumping img{
@@ -33,5 +33,25 @@
   }
   100% {
     transform: scale(1,1);
+  }
+}
+
+#explosion img{
+  transform-origin: center;
+
+}
+
+#explosion.boom img {
+  animation: boom 300ms cubic-bezier(0.3,0.8,2.0) both;
+}
+@keyframes boom {
+  0%{
+transform: scale(1) rotate(5deg) opacity=1;
+  }
+  50% {
+  transform: scale(0.8) rotate(2deg) opacity=1;
+  }
+  100%{
+  transform: scale(0.2) rotate(-8deg) opacity=0;
   }
 }
